@@ -8,13 +8,16 @@
     font-size: 25px !important;
     color: rgb(23, 56, 117) !important;
 }
+
 .headone{
     border-bottom: 2px solid gray;
 }
+
 .bg-body-tertiary Button {
     position: relative;
     left: -10px;
 }
+
 @media (max-width: 768px) {
     .navcon {
         display: flex;

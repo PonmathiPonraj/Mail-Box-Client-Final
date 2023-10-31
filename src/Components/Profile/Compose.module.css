@@ -1,6 +1,7 @@
 .form {
     width: 90%;
 }
+
 .to {
     display: flex;
     align-items: center;
@@ -8,18 +9,21 @@
     background-color: rgb(167, 165, 165);
     height: 2rem;
 }
+
 .mail {
     display: flex;
     align-items: center;
     flex-direction: row;
     padding: 0.25rem;
 }
+
 .subject {
     display: flex;
     align-items: center;
     flex-direction: row;
     padding: 0.25rem;
 }
+
 .editor {
     border: 1px solid rgba(192, 190, 190, 0.5);
     margin: 5px;

@@ -1,7 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-
 import classes from "./SentBox.module.css";
 import { useNavigate } from "react-router-dom";
 import { sentboxActions } from "../../store/sentbox-slice";
@@ -14,27 +13,28 @@ const SentBox = () => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
 
-    const clickEmailHanler = async (item) => {
-      console.log(item);
-      navigate("/profile/sentbox/message", { replace: true });
-      dispatch(sentboxActions.addMessageOpen(item));
-    };
+  const clickEmailHanler = async (item) => {
+    console.log(item);
+    navigate("/profile/sentbox/message", { replace: true });
+    dispatch(sentboxActions.addMessageOpen(item));
+  };
 
-    const clickDeleteHandler = async (deleteItem) => {
-      // console.log(item);
-      dispatch(sentboxActions.removeItem(deleteItem));
-      const email = auth.email.replace(/[.@]/g, "");
-      try {
-          const resDlt = await fetch(`https://mail-box-87267-default-rtdb.firebaseio.com/${email}/sentEmails/${deleteItem[0]}.json`,{
-              method: 'DELETE'
-          })
-          if(!resDlt.ok){
-            throw Error ('Failed to delete')
-        }
-      } catch(error) {
-          alert(error);
+  const clickDeleteHandler = async (deleteItem) => {
+    // console.log(item);
+    dispatch(sentboxActions.removeItem(deleteItem));
+    const email = auth.email.replace(/[.@]/g, "");
+    try {
+      const resDlt = await fetch(`https://mail-box-client-f2090-default-rtdb.firebaseio.com/${email}/sentEmails/${deleteItem[0]}.json`,{
+        method: 'DELETE'
+      })
+      if(!resDlt.ok){
+        throw Error ('Failed to delete')
       }
-    };
+    } 
+    catch(error) {
+      alert(error);
+    }
+  };
 
   return (
     <section className={classes.SentBoxCon}>

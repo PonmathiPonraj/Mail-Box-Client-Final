@@ -1,5 +1,4 @@
 import React from "react";
-
 import classes from "./EmailMessage.module.css";
 import { useSelector } from "react-redux";
 import { BsPersonCircle } from "react-icons/bs";
@@ -7,7 +6,6 @@ import { BsPersonCircle } from "react-icons/bs";
 const EmailMessage = () => {
   const messageOpen = useSelector((state) => state.inbox.messageOpen);
   console.log(messageOpen);
-
   return (
     <section className={classes.messageCon}>
       <h1>{messageOpen.emailSub}</h1>

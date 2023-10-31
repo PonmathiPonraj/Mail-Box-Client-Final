@@ -24,11 +24,9 @@ const authSlice = createSlice({
             localStorage.removeItem('isLoggedIn')
             state.isLoggedIn = false;
             // localStorage.clear();
-
         }
     }
 });
-
 
 export const authActions = authSlice.actions;
 export default authSlice.reducer; 

@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-
 import authReducer from './auth-slice';
 import inboxReducer from './inbox-slice';
 import sentBoxReducer from './sentbox-slice';

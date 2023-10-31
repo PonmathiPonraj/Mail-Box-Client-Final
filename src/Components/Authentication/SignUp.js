@@ -11,8 +11,6 @@ function SignUp() {
   const [passMatch, setPassMatch] = useState(false);
   const [inputRequire, setInputRequire] = useState(false);
 
-
-
   const signUpHandler = async (e) => {
     e.preventDefault();
     // console.log('clicked')

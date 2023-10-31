@@ -16,16 +16,16 @@ const useFetch = (url) => {
         const resData = await res.json();
         setData(resData);
         setError(null);
-      } catch (error) {
+      } 
+      catch (error) {
         setError(error);
-      } finally {
+      } 
+      finally {
         setLoading(false);
       }
     };
-
     fetchData();
   },[url]);
-
   return {data, loading, error}
 };
 
